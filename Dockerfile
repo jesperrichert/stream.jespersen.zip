@@ -5,7 +5,7 @@ WORKDIR /app
 FROM node:lts-alpine3.23 AS buildfrontend
 WORKDIR /Jespersen.Stream.Frondend
 
-COPY /Jespersen.Stream.Frondend/ .
+COPY Jespersen.Stream.Frondend/ .
 
 RUN npm install
 RUN npm run build
@@ -13,7 +13,7 @@ RUN npm run build
 FROM golang:tip-alpine3.23 AS buildbackend
 WORKDIR /Jespersen.Stream.Backend
 
-COPY /Jespersen.Stream.Backend/ .
+COPY Jespersen.Stream.Backend/ .
 
 RUN go build
 
