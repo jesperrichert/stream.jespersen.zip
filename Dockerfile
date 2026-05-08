@@ -21,7 +21,7 @@ FROM base AS final
 
 ENV FRONTEND_BUILD=/app/frontend
 
-COPY --from=buildbackend /Jespersen.Stream/go.Jespersen.Stream .
-COPY --from=buildfrontend /Jespersen.Stream/build/ ./frontend
+COPY --from=buildbackend /Jespersen.Stream.Frontend/go.Jespersen.Stream .
+COPY --from=buildfrontend /Jespersen.Stream.Backend/build/ ./frontend
 
 CMD ["./go.Jespersen.Stream"]
