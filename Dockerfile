@@ -15,7 +15,7 @@ WORKDIR /Jespersen.Stream.Backend
 
 COPY Jespersen.Stream.Backend/ .
 
-RUN go build
+RUN go build cmd/main.go
 
 FROM base AS final
 
