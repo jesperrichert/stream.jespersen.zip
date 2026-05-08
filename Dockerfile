@@ -5,7 +5,7 @@ WORKDIR /app
 FROM oven/bun:slim AS buildfrontend
 WORKDIR /Jespersen.Stream.Frontend
 
-COPY Jespersen.Stream.Frontend/ .
+COPY /Jespersen.Stream.Frontend/ .
 
 RUN bun install
 RUN bun run build
@@ -13,7 +13,7 @@ RUN bun run build
 FROM golang:tip-alpine3.23 AS buildbackend
 WORKDIR /Jespersen.Stream.Backend
 
-COPY Jespersen.Stream.Backend/ .
+COPY /Jespersen.Stream.Backend/ .
 
 RUN go build cmd/main.go
 
